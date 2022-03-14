@@ -19,7 +19,7 @@ const ForgotPasswordScreen = () => {
 
     try {
       const { data } = await axios.post(
-        "api/auth/forgotpassword",
+        "/api/auth/forgotpassword",
         { email },
         config
       );
@@ -59,7 +59,7 @@ const ForgotPasswordScreen = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <Button variant="contained">Send Email</Button>;
+        <Button type="submit" variant="contained">Send Email</Button>
       </form>
     </div>
   );

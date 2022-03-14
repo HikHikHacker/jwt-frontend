@@ -76,7 +76,7 @@ const LoginScreen = ({ history }) => {
         <Button type="submit" variant="contained" tabIndex={3}>
           Login
         </Button>
-        ;
+        
         <span className="login-screen_subtext">
           You dont have an account?<Link to="/register">Signup</Link>{" "}
         </span>

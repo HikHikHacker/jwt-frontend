@@ -1,8 +1,30 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import {
+  DataGrid,
+  GridToolbarContainer,
+  GridToolbarExport,
+} from "@mui/x-data-grid";
+import { useDemoData } from "@mui/x-data-grid-generator";
 import Button from "@mui/material/Button";
 
 const PrivateScreen = ({ history }) => {
+  //datagrid
+  function CustomToolbar() {
+    return (
+      <GridToolbarContainer>
+        <GridToolbarExport />
+      </GridToolbarContainer>
+    );
+  }
+
+  const { data, loading } = useDemoData({
+    dataSet: "Commodity",
+    rowLength: 4,
+    maxColumns: 6,
+  });
+  //datagrid
+
   const [error, setError] = useState("");
   const [privateData, setPrivateData] = useState("");
 
@@ -40,11 +62,19 @@ const PrivateScreen = ({ history }) => {
     <span className="error-message">{error}</span>
   ) : (
     <>
+    <div style={{ height: 300, width: '100%' }}>
+      <DataGrid
+        {...data}
+        loading={loading}
+        components={{
+          Toolbar: CustomToolbar,
+        }}
+      />
+    </div>
       <div style={{ background: "green", color: "white" }}>{privateData}</div>
       <Button onClick={logoutHandler} variant="contained">
         Logout
       </Button>
-      ;
     </>
   );
 };
