@@ -9,6 +9,7 @@ import LoginScreen from "./components/screens/LoginScreen";
 import RegisterScreen from "./components/screens/RegisterScreen";
 import ForgotPasswordScreen from "./components/screens/ForgotPasswordScreen";
 import ResetPasswordScreen from "./components/screens/ResetPasswordScreen";
+import NotFound from "./components/screens/NotFound"
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
             path="/passwordreset/:resetToken"
             component={ResetPasswordScreen}
           />
+          <Route component={NotFound} />
         </Switch>
       </div>
     </Router>
