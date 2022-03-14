@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Button from "@mui/material/Button"
+import Button from "@mui/material/Button";
 
 import "./ResetPasswordScreen.css";
 
@@ -11,7 +11,7 @@ const ResetPasswordScreen = ({ match }) => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const resetPasswordHandle = async (e) => {
+  const resetPasswordHandler = async (e) => {
     e.preventDefault();
 
     const config = {
@@ -61,7 +61,6 @@ const ResetPasswordScreen = ({ match }) => {
             {success} <Link to={"/login"}>Login</Link>
           </span>
         )}
-
         <div className="gorm-group">
           <label htmlFor="password">New Password:</label>
           <input
@@ -74,7 +73,6 @@ const ResetPasswordScreen = ({ match }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-
         <div className="form-group">
           <label htmlFor="confirmpassword">Confirm New Password:</label>
           <input
@@ -87,9 +85,13 @@ const ResetPasswordScreen = ({ match }) => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
-
-        <Button type="submit" variant="contained">Reset Password</Button>;
+        <Button type="submit" variant="contained">
+          Reset Password
+        </Button>
+        ;
       </form>
     </div>
   );
 };
+
+export default ResetPasswordScreen;

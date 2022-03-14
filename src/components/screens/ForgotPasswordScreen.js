@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 import "./ForgotPasswordScreen.css";
-import { spacing } from "@mui/system";
 import Button from "@mui/material/Button";
 
 const ForgotPasswordScreen = () => {

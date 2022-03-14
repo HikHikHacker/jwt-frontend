@@ -25,8 +25,8 @@ const RegisterScreen = ({ history }) => {
       header: { "Content-Type": "application/json" },
     };
     if (password !== confirmpassword) {
-      setPassword = "";
-      setConfirmPassword = "";
+      setPassword("");
+      setConfirmPassword("");
       setTimeout(() => {
         setError("");
       }, 5000);
